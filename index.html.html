@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형 헤더 내비게이션</title>
+    <link rel="stylesheet" href="css/39.css">
+</head>
+
+<body>
+    <header>
+        <div class="inner">
+            <h1>
+                <a href="#">로고</a>
+            </h1>
+
+            <div class="mobile menu_open" onclick="document.getElementsByClassName('mobile_gnb')[0].style.right = 0">
+                <!-- onclick="document.getElementsByClassName"
+                    화면안의 클래스 이름을 찾겠다 
+                ('mobile_gnb') 태그 안에 스타일을 넣는다
+                [0] 첫번째 의미-->
+                메뉴보기
+            </div><!-- .mobile.menu_open end -->
+
+            <nav class="pc">
+                <ul class="gnb">
+
+                    <li class="depth01">
+                        <a href="#">menu1</a>
+                        <ul class="depth02">
+                            <li><a href="#">menu1-1</a></li>
+                            <li><a href="#">menu1-2</a></li>
+                            <li><a href="#">menu1-3</a></li>
+                            <li><a href="#">menu1-4</a></li>
+                        </ul><!-- .depth02 end -->
+                    </li><!-- .depth01 end -->
+
+                    <li class="depth01">
+                        <a href="#">menu2</a>
+                        <ul class="depth02">
+                            <li><a href="#">menu2-1</a></li>
+                            <li><a href="#">menu2-2</a></li>
+                            <li><a href="#">menu2-3</a></li>
+                            <li><a href="#">menu2-4</a></li>
+                        </ul><!-- .depth02 end -->
+                    </li><!-- .depth01 end -->
+
+                    <li class="depth01">
+                        <a href="#">menu3</a>
+                        <ul class="depth02">
+                            <li><a href="#">menu3-1</a></li>
+                            <li><a href="#">menu3-2</a></li>
+                            <li><a href="#">menu3-3</a></li>
+                            <li><a href="#">menu3-4</a></li>
+                        </ul><!-- .depth02 end -->
+                    </li><!-- .depth01 end -->
+
+                    <li class="depth01">
+                        <a href="#">menu4</a>
+                        <ul class="depth02">
+                            <li><a href="#">menu4-1</a></li>
+                            <li><a href="#">menu4-2</a></li>
+                            <li><a href="#">menu4-3</a></li>
+                            <li><a href="#">menu4-4</a></li>
+                        </ul><!-- .depth02 end -->
+                    </li><!-- .depth01 end -->
+
+                </ul><!-- .gnb end -->
+            </nav><!-- 🔶.pc end -->
+
+            <nav class="mobile mobile_gnb">
+                <div class="menu_close" onclick="document.getElementsByClassName('mobile_gnb')[0].style.right = '-100%' ">
+                    메뉴닫기
+                </div><!-- .menu_close end -->
+
+                <ul class="gnb">
+
+                    <li class="depth01">
+                        <a href="#">menu1</a>
+                        <ul class="depth02">
+                            <li><a href="#">menu1-1</a></li>
+                            <li><a href="#">menu1-2</a></li>
+                            <li><a href="#">menu1-3</a></li>
+                            <li><a href="#">menu1-4</a></li>
+                        </ul><!-- .depth02 end -->
+                    </li><!-- .depth01 end -->
+
+                    <li class="depth01">
+                        <a href="#">menu2</a>
+                        <ul class="depth02">
+                            <li><a href="#">menu2-1</a></li>
+                            <li><a href="#">menu2-2</a></li>
+                            <li><a href="#">menu2-3</a></li>
+                            <li><a href="#">menu2-4</a></li>
+                        </ul><!-- .depth02 end -->
+                    </li><!-- .depth01 end -->
+
+                    <li class="depth01">
+                        <a href="#">menu3</a>
+                        <ul class="depth02">
+                            <li><a href="#">menu3-1</a></li>
+                            <li><a href="#">menu3-2</a></li>
+                            <li><a href="#">menu3-3</a></li>
+                            <li><a href="#">menu3-4</a></li>
+                        </ul><!-- .depth02 end -->
+                    </li><!-- .depth01 end -->
+
+                    <li class="depth01">
+                        <a href="#">menu4</a>
+                        <ul class="depth02">
+                            <li><a href="#">menu4-1</a></li>
+                            <li><a href="#">menu4-2</a></li>
+                            <li><a href="#">menu4-3</a></li>
+                            <li><a href="#">menu4-4</a></li>
+                        </ul><!-- .depth02 end -->
+                    </li><!-- .depth01 end -->
+
+                </ul><!-- .gnb end -->
+            </nav><!-- 🔶.mobile mobile_gnb end -->
+
+        </div><!-- .inner end -->
+    </header>
+    <section class="main_visual">
+        <img src="img/숲 (3).jpg" alt="">
+        <div>
+            <h2>WEBDESIGN</h2>
+        </div>
+    </section><!-- .main_visual end -->
+</body>
+
+</html>

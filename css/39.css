@@ -1,0 +1,214 @@
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+body {
+    line-height: 1;
+    color: #333;
+}
+
+.mobile {
+    display: none;
+}
+
+
+
+header {
+    height: 100px;
+
+    /* 숨겨진 헤더의 메뉴 항상 제일 앞으로 순서위치 */
+    position: relative;
+    z-index: 1; 
+}
+
+header .inner {
+    height: 100%;
+    max-width: 1280px;
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* align-items: 이미지 정렬 가능
+    line height : 이미지는 정렬 안됨 */
+}
+
+header .inner .pc .gnb {
+    display: flex;
+    text-align: center;
+}
+
+header .inner .pc .gnb .depth01 {
+    position: relative;
+}
+
+header .inner .pc .gnb .depth01>a {
+    line-height: 100px;
+    padding: 0 30px;
+    /* 좌우여백있음 */
+}
+
+header .inner .pc .gnb .depth01:hover > a {
+    background-color: rgb(52, 70, 54);
+    color: white;
+    display: block; /* a가 인라인블럭이므로 */
+}
+
+header .inner .pc .gnb .depth01 .depth02 {
+    width: 100%;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    background-color: gray;
+    display: none;
+    /* 2차 메뉴 숨김 */
+}
+
+header .inner .pc .gnb .depth01:hover .depth02 {
+    /* .depth01:hover 글자 사이 : 띄어쓰기하면 2차메뉴 나타남 적용안됨 */
+    /* .depth01 1차 메뉴에 마우스 올렸을 때 -> .depth02 2차 메뉴 나타남 
+.depth02 가 display:block;*/
+    display: block;
+}
+
+
+header .inner .pc .gnb .depth01 .depth02 li {
+    padding: 15px 0;
+    color: white;
+}
+
+header .inner .pc .gnb .depth01 .depth02 li:hover {
+    background-color: lightgray;
+    color: #333;
+}
+
+
+
+/* 🔶모바일 내비게이션🔶 */
+.mobile_gnb {
+    width: 80%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+
+    right: -100%; 
+    /* 새로고침시
+    0 : 메뉴화면 우선 보임
+    -100% : 메뉴보기 클릭시 보임(html파일에서 온클릭 작업시 가능)
+    , 메뉴화면 밖으로 내보냄 */
+
+    background-color: rgb(52, 70, 54);
+    padding: 0 50px; /* 좌우 여백있음 */
+    box-sizing: border-box;
+
+    overflow: scroll; 
+    /* 🔶1,2차 메뉴 브라우저 높이 아래로 내려갈경우
+    메뉴확인용 스크롤바 생성 */
+}
+
+.mobile_gnb::-webkit-scrollbar {
+    /* 🔶메뉴확인용 이중스크롤바 숨김
+    마우스휠로 스크롤 가능*/
+    display: none;
+}
+
+.mobile_gnb .menu_close {
+    color: white;
+    line-height: 100px;
+}
+
+.mobile_gnb .depth01 {
+    background-color: rgb(255, 255, 255);
+    margin-bottom: 30px;
+}
+
+.mobile_gnb .depth01 > a {
+    display: block;
+    text-align: center;
+    padding: 20px;
+    background-color: gray;
+    color: white;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+/* .mobile_gnb .depth01 .depth02 {
+    display: none;
+} */
+
+.mobile_gnb .depth01 .depth02 li {
+    padding: 15px 0;
+    text-align: center;
+    border-bottom: 0.1px solid #c0c0c0;
+}
+
+.mobile_gnb .depth01:hover > .depth02 {
+    display: block;
+}
+
+.mobile_gnb .depth01 .depth02 li:hover {
+    background-color: lightgray;
+}
+
+/* main_visual */
+.main_visual {
+    height: 100vh;
+    position: relative;
+    background-color: rgb(52, 70, 54);
+}
+
+.main_visual img {
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.main_visual div {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: center; /* 수평정렬 */
+    align-items: center; /* 수직정렬 */
+
+    font-size: 8vw; 
+    /* 🔶 vw : 화면 크기에 따라 폰트 크기 같이 조절됨 */
+}
+
+.main_visual div h2 {
+    /* 🔶 블렌딩 효과 🔶
+    텍스트 이미지 , 폰트에 따라 흑백 반전 투명도 조절가능*/ 
+    mix-blend-mode: overlay; 
+    /* mix-blend-mode
+    브라우저 검사창에서 입력된 코드 delete 후 
+    키보드 방향키로 블렌드 모드 확인가능
+    */
+}
+
+
+
+@media screen and (max-width:1024px) {
+    .pc {
+        display: none;
+    }
+
+    .mobile {
+        display: block;
+    }
+}
